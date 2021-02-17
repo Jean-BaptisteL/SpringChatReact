@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { ArrowRightCircleFill } from 'react-bootstrap-icons';
-import '../defaultImage/defaultProfil.png';
+import img from '../defaultImage/defaultProfil.png';
 
 export default function Chat() {
     
@@ -19,7 +19,11 @@ export default function Chat() {
                         <Card.Header className="text-center"><h2>Nom du salon</h2></Card.Header>
                         <Card.Body>
                             <div className="w-75 d-flex">
-                            
+                                <img src={img} style={{height:'40px', width:'40px'}}></img>
+                                <div className="m-1 w-100 rounded border">
+                                    <p>Blablalblablablablablablablablablablabla</p>
+                                    <small>par Roger le 17/02/2021 à 16:58</small>
+                                </div>
                             </div>
                         </Card.Body>
                         <Card.Footer>
