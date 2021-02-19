@@ -2,37 +2,58 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import {Component} from 'react';
 
-export default function SignIn() {
+export default class SignIn extends Component {
+
+      constructor(props){
+        super(props);
+        this.state={sexe:'',username:'',image:'',email:'',age:'',ville:'',departement:'',password:''};
+        this.userChange = this.userChange.bind(this);
+        this.submitUser = this.submitUser.bind(this);
+      }
+
+      submitUser(event){
+        alert('Name :'+this.state.username+' Age : '+this.state.age+' Sexe :'+this.state.sexe+' Ville : '+this.state.ville+' Departement : '+this.state.departement+' Email : '+this.state.email+' Image : '+this.state.image+' Password : '+this.state.password);
+        event.preventDefault();
+      }
+
+      userChange(event){
+        this.setState({
+          [event.target.name]:event.target.value
+        })
+      }
+
+render(){
     return (
         <>
             <h2 className="text-center">Inscription</h2>
             <Row className="m-0 d-flex justify-content-center">
                 <Col md={6} sm={12}>
-                    <Form>
+                    <Form id="addUserForm" onSubmit={this.submitUser}>
                         <Form.Group controlId="formSex" className="mt-4">
                             <Form.Label>Votre sexe</Form.Label>
-                            <Form.Control as="select">
+                            <Form.Control as="select" name = "sexe" value={this.state.sexe} onChange={this.userChange}>
                                 <option disabled selected>Sexe</option>
-                                <option>Homme</option>
-                                <option>Femme</option>
-                                <option>Non binaire</option>
+                                <option value="Homme">Homme</option>
+                                <option value="Femme">Femme</option>
+                                <option value="Non binaire">Non binaire</option>
                             </Form.Control>
                         </Form.Group>
 
                         <Form.Group controlId="formName" className="mt-4">
                             <Form.Label>Nom :</Form.Label>
-                            <Form.Control type="text" placeholder="Entrez votre nom" />
+                            <Form.Control type="text" placeholder="Entrez votre nom" name="username" value={this.state.username} onChange={this.userChange} />
                         </Form.Group>
 
                         <Form.Group className="mt-4">
                             <Form.Label>Votre image de profil :</Form.Label>
-                            <Form.File id="formImage" />
+                            <Form.File name="image" id="formImage" value={this.state.image} onChange={this.userChange} />
                         </Form.Group>
 
                         <Form.Group controlId="formEmail" className="mt-4">
                             <Form.Label>Adresse email</Form.Label>
-                            <Form.Control type="email" placeholder="Entrez votre email" />
+                            <Form.Control type="email" placeholder="Entrez votre email" name="email" value={this.state.email} onChange={this.userChange}/>
                             <Form.Text className="text-muted">
                                 Votre adresse email sera gardée secrète.
                             </Form.Text>
@@ -40,17 +61,17 @@ export default function SignIn() {
 
                         <Form.Group controlId="formAge" className="mt-4">
                             <Form.Label>Age :</Form.Label>
-                            <Form.Control type="number" min={16} max={100} step={1} />
+                            <Form.Control type="number" min={16} max={100} step={1} name="age" value={this.state.age} onChange={this.userChange}/>
                         </Form.Group>
 
                         <Form.Group controlId="formCity" className="mt-4">
                             <Form.Label>Ville :</Form.Label>
-                            <Form.Control type="text" placeholder="Entrez votre ville" />
+                            <Form.Control type="text" placeholder="Entrez votre ville" name="ville"  value={this.state.ville} onChange={this.userChange}/>
                         </Form.Group>
 
                         <Form.Group controlId="formDepartement" className="mt-4">
                             <Form.Label>Département :</Form.Label>
-                            <Form.Control as="select">
+                            <Form.Control as="select" name="departement" value={this.state.departement} onChange={this.userChange}>
                                 <option disabled selected>Votre département</option>
                                 <option>01 	Ain</option>
                                 <option>02 	Aisne</option>
@@ -158,7 +179,7 @@ export default function SignIn() {
 
                         <Form.Group controlId="formPassword" className="mt-4">
                             <Form.Label>Mot de passe :</Form.Label>
-                            <Form.Control type="password" placeholder="monMotDePasse" />
+                            <Form.Control type="password" placeholder="monMotDePasse" name="password" value={this.state.password} onChange={this.userChange} />
                         </Form.Group>
                         <Form.Group controlId="formPasswordConfirmation">
                             <Form.Label>Confirmez le mot de passe :</Form.Label>
@@ -173,4 +194,5 @@ export default function SignIn() {
             </Row>
         </>
     );
+  }
 }
