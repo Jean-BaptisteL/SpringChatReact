@@ -10,6 +10,8 @@ import LogIn from './pages/LogIn';
 import Chat from './pages/Chat';
 import SimpleTable from './pages/Table';
 
+
+
 function App() {
   return (
     <div>
@@ -22,7 +24,7 @@ function App() {
             <Col md={6}>
               <Nav className="mr-auto">
                 <Link className="link"><Nav.Link href="#link">Trouver un salon</Nav.Link></Link>
-                <Link className="link"><Nav.Link href="#link">Créer un salon</Nav.Link></Link>
+                <Link to={"/newChannel"} className="link"><Nav.Link href="#link">Créer un salon</Nav.Link></Link>
               </Nav>
             </Col>
             <Col md={6}>
@@ -56,7 +58,7 @@ function App() {
         </Switch>
       </section>
       <footer className="text-center bg-light mt-5">
-        <p className="text-dark">Application Spring et React développé par Dinehs, Jason et Jean-Baptiste.</p>
+        <p className="text-dark">Application Spring et React développée par Dinehs, Jason et Jean-Baptiste.</p>
       </footer>
     </div>
   );
