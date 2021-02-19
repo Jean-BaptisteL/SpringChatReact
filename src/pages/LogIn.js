@@ -2,8 +2,22 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+// import React , {useState} from 'react';
+//
+// const [data, upDateData] = React.useState([]);
+// const [firstLoad, setLoad] = React.useState(true);
+// let isLoading = true;
 export default function LogIn() {
+//   async function sampleFunc() {
+//     let response = await fetch("/login");
+//     let body = await response.json();
+//     upDateData(body);
+//   }
+//
+//   if (firstLoad) {
+//     sampleFunc();
+//     setLoad(false);
+//   }
     return (
         <>
         <h2 className="text-center">Connexion</h2>

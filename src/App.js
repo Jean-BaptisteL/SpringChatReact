@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import LogIn from './pages/LogIn';
 import Chat from './pages/Chat';
+import SimpleTable from './pages/Table';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
                 <Link to={"/signIn"} className="link"><Nav.Link href="#link">Inscription</Nav.Link></Link>
                 <Link className="link" to={"/logIn"}><Nav.Link href="#link">Connexion</Nav.Link></Link>
                 <Link className="link" to={"/chat"}><Nav.Link href="#link">Chat</Nav.Link></Link>
+                <Link className="link" to={"/table"}><Nav.Link href="#link">Chat</Nav.Link></Link>
               </Nav>
             </Col>
           </Navbar.Collapse>
@@ -47,6 +49,9 @@ function App() {
           </Route>
           <Route exact path="/chat">
             <Chat />
+          </Route>
+          <Route exact path="/table">
+            <SimpleTable />
           </Route>
         </Switch>
       </section>
