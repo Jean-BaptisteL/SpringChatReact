@@ -39,7 +39,7 @@ export default function SimpleTable() {
             <tbody>
               {data?.map(row => (
                 <tr key={row.name}>{alert(row.name)}
-                  <td align="center">{row.name}</td>
+                  <td align="center">{row.username}</td>
                   <td align="center">{row.age}</td>
                   <td align="center">{row.ville}</td>
                   <td align="center">{row.departement}</td>
