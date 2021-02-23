@@ -10,6 +10,8 @@ import LogIn from './pages/LogIn';
 import Chat from './pages/Chat';
 import NewChannel from './pages/NewChannel';
 import SimpleTable from './pages/Table';
+import FindChannel from './pages/FindChannel';
+import Profil from './pages/Profil';
 
 
 
@@ -24,7 +26,7 @@ function App() {
           <Navbar.Collapse id="basic-navbar-nav" className="row">
             <Col md={6}>
               <Nav className="mr-auto">
-                <Link className="link"><Nav.Link href="#link">Trouver un salon</Nav.Link></Link>
+              <Link to={"/findChannel"} className="link"><Nav.Link href="#link">Trouver un salon</Nav.Link></Link>
                 <Link to={"/newChannel"} className="link"><Nav.Link href="#link">Créer un salon</Nav.Link></Link>
               </Nav>
             </Col>
@@ -34,7 +36,7 @@ function App() {
                 <Link className="link" to={"/logIn"}><Nav.Link href="#link">Connexion</Nav.Link></Link>
                 <Link className="link" to={"/chat"}><Nav.Link href="#link">Chat</Nav.Link></Link>
                 <Link className="link" to={"/table"}><Nav.Link href="#link">USer List</Nav.Link></Link>
-                <Link className="link" to={"/newChannel"}><Nav.Link href="#link">New Channel</Nav.Link></Link>
+                <Link className="link" to={"/profil"}><Nav.Link href="#link">Profil</Nav.Link></Link>
               </Nav>
             </Col>
           </Navbar.Collapse>
@@ -59,6 +61,12 @@ function App() {
           </Route>
           <Route exact path="/newChannel">
             <NewChannel />
+          </Route>
+          <Route exact path="/findChannel">
+            <FindChannel />
+          </Route>
+          <Route exact path="/profil">
+            <Profil />
           </Route>
         </Switch>
       </section>
