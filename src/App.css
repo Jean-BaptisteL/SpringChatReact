@@ -1,6 +1,32 @@
+h1{
+    font-family: 'Sriracha', cursive;
+    font-size: 4rem!important;
+}
+
+@media screen and (max-width: 738px){
+    h1{
+        font-size: 2em!important;
+        margin-top: 18px!important;
+    }
+}
+
+#logo{
+    height: 4rem!important;
+    width: auto;
+}
+
+#nav{
+    background: linear-gradient(#66c75a, #45853d);
+}
+
 .link{
     text-decoration: none;
 }
+
+.navLink{
+    color:#f0f1f2!important;
+}
+
 #pageBody{
     min-height: 82vh;
 }

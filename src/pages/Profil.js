@@ -13,9 +13,8 @@ import { PersonX } from 'react-bootstrap-icons';
 export default function Profil() {
 
     const [open, setOpen] = useState(false);
-    const [data, upDateData] = React.useState([]);
-    const [dataFriends, upDateDataFriends] = React.useState([]);
-    const [firstLoad, setLoad] = React.useState(true);
+    const [data, upDateData] = useState([]);
+    const [firstLoad, setLoad] = useState(true);
     let isLoading = true;
 
     async function sampleFunc() {
@@ -27,13 +26,10 @@ export default function Profil() {
         };
         let response = await fetch('/users/1', headers);
         let body = await response.json();
-        let responseFriends = '';
         upDateData(body);
-        await data.friends?.map((friend) => (
-            responseFriends += (fetch('/users/'+ friend.id, headers).json())
-        ));
-        upDateDataFriends(responseFriends);
     }
+
+    
 
     if (firstLoad) {
         sampleFunc();
@@ -46,13 +42,13 @@ export default function Profil() {
         <>
             <h2 className="text-center">Profil</h2>
             <Row className="m-0 d-flex justify-content-center">
-                <Col sm={12} md={5} className="border rounded">
+                <Col sm={12} md={5} className="border rounded shadow-lg">
                     <div className="d-flex justify-content-center">
                         <img src={img} style={{ height: '130px', width: 'auto' }} className="mt-2 img-thumbnail"></img>
                     </div>
                     <h3>Nom :</h3>
                     <p>{data.username}</p>
-                    <h3>Adresse mail :</h3>
+                    <h3>Adresse email :</h3>
                     <p>{data.email}</p>
                     <h3>Age :</h3>
                     <p>{data.age} ans</p>
@@ -70,7 +66,7 @@ export default function Profil() {
                             className="mb-2"
                         >
                             Modifier
-                            </Button>
+                        </Button>
                     </div>
                 </Col>
                 <Collapse in={open}>
@@ -244,51 +240,21 @@ export default function Profil() {
             </Row>
 
             <Row className="m-0 mt-4 d-flex justify-content-center">
-                <Col sm={12} md={5} className="border rounded">
+                <Col sm={12} md={5} className="border rounded shadow-lg">
                     <h3 className="text-center">Liste d'amis</h3>
                     <div className="d-flex justify-content-end">
                         <Button size="sm" variant="outline-success">Ajouter un ami <PersonPlus className="mb-1" /></Button>
                     </div>
                     <div className="overflow-auto">
                         <ul style={{ listStyle: "none" }}>
-                            {dataFriends.map(row => (
-                                <li className="d-flex mt-2 border-bottom pb-1" key={row.name}>
+                            {data.friends?.map(row => (
+                                <li className="d-flex mt-2 border-bottom pb-1" key={row.id}>
                                     <p className="mr-auto w-75 mb-0">{row.username}</p>
                                     <div className="d-flex justify-content-end w-25">
                                         <Button size="sm" variant="danger"><PersonX className="mb-1" /></Button>
                                     </div>
                                 </li>
                             ))}
-                            <li className="d-flex mt-2 border-bottom pb-1">
-                                <p className="mr-auto w-75 mb-0">Ami 1</p>
-                                <div className="d-flex justify-content-end w-25">
-                                    <Button size="sm" variant="danger"><PersonX className="mb-1" /></Button>
-                                </div>
-                            </li>
-                            <li className="d-flex mt-2 border-bottom pb-1">
-                                <p className="mr-auto w-75 mb-0">Ami 2</p>
-                                <div className="d-flex justify-content-end w-25">
-                                    <Button size="sm" variant="danger"><PersonX className="mb-1" /></Button>
-                                </div>
-                            </li>
-                            <li className="d-flex mt-2 border-bottom pb-1">
-                                <p className="mr-auto w-75 mb-0">Ami 3</p>
-                                <div className="d-flex justify-content-end w-25">
-                                    <Button size="sm" variant="danger"><PersonX className="mb-1" /></Button>
-                                </div>
-                            </li>
-                            <li className="d-flex mt-2 border-bottom pb-1">
-                                <p className="mr-auto w-75 mb-0">Ami 4</p>
-                                <div className="d-flex justify-content-end w-25">
-                                    <Button size="sm" variant="danger"><PersonX className="mb-1" /></Button>
-                                </div>
-                            </li>
-                            <li className="d-flex mt-2 border-bottom pb-1">
-                                <p className="mr-auto w-75 mb-0">Ami 1</p>
-                                <div className="d-flex justify-content-end w-25">
-                                    <Button size="sm" variant="danger"><PersonX className="mb-1" /></Button>
-                                </div>
-                            </li>
                         </ul>
                     </div>
                 </Col>

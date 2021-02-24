@@ -10,7 +10,7 @@ export default function Home() {
         <>
             <Row className="d-flex justify-content-around m-0" top="xs">
                 <Col md={3} sm={12} className="d-flex align-items-stretch">
-                    <article className="bg-light p-2 mb-3 flex-fill">
+                    <article className="bg-light p-2 mb-3 flex-fill shadow-lg rounded">
                         <h2 className="text-center">Derniers messages reçus</h2>
                         <ListGroup>
                             <ListGroup.Item>
@@ -52,8 +52,8 @@ export default function Home() {
                     </article>
                 </Col>
                 <Col md={3} sm={12} className="d-flex align-items-stretch">
-                    <article className="bg-light p-2 mb-3 flex-fill">
-                        <h2 className="text-center">Vos salons de discution</h2>
+                    <article className="bg-light p-2 mb-3 flex-fill shadow-lg rounded">
+                        <h2 className="text-center">Vos salons de discussion</h2>
                         <div>
                             <h3>Thème 1</h3>
                             <ul>
@@ -73,7 +73,7 @@ export default function Home() {
                     </article>
                 </Col>
                 <Col md={3} sm={12} className="d-flex align-items-stretch">
-                    <article className="bg-light p-2 mb-3 flex-fill">
+                    <article className="bg-light p-2 mb-3 flex-fill shadow-lg rounded">
                         <h2 className="text-center">Liste d'amis</h2>
                         <div className="overflow-auto">
                             <Accordion defaultActiveKey="0">

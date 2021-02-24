@@ -12,7 +12,7 @@ import { Search } from 'react-bootstrap-icons';
 export default function FindChannel() {
     return (
         <>
-            <h2 className="text-center">Trouver un salon</h2>
+            <h2 className="text-center">Rechercher un salon</h2>
             <Tabs defaultActiveKey="byName" id="uncontrolled-tab-example">
                 <Tab eventKey="byName" title="Par nom">
                     <Row className="m-0 d-flex justify-content-center">

@@ -21,7 +21,7 @@ export default function SimpleTable() {
 
   return (
     <>
-    <h1>USer directory</h1>
+    <h2>USer directory</h2>
 
           <table>
             <thead>
@@ -38,7 +38,7 @@ export default function SimpleTable() {
             </thead>
             <tbody>
               {data?.map(row => (
-                <tr key={row.name}>{alert(row.name)}
+                <tr key={row.id}>
                   <td align="center">{row.username}</td>
                   <td align="center">{row.age}</td>
                   <td align="center">{row.ville}</td>

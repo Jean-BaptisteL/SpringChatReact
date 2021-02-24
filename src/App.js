@@ -12,6 +12,7 @@ import NewChannel from './pages/NewChannel';
 import SimpleTable from './pages/Table';
 import FindChannel from './pages/FindChannel';
 import Profil from './pages/Profil';
+import logo from './defaultImage/logo.PNG';
 
 
 
@@ -19,24 +20,27 @@ function App() {
   return (
     <div>
       <header>
-        <h1 className="text-center">Spring Chat</h1>
-        <Navbar bg="light" expand="lg" className="p-2 mb-5">
-          <Link className="link" to={"/"}><Navbar.Brand>Accueil</Navbar.Brand></Link>
+        <div className="d-flex justify-content-center">
+          <img src={logo} className="img-fluid" id="logo"></img>
+          <h1 className="text-center mb-3">Spring Chat</h1>
+        </div>
+        <Navbar expand="lg" className="p-2 mb-5 shadow" id="nav">
+          <Link className="link" to={"/"}><Navbar.Brand className="navLink">Accueil</Navbar.Brand></Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="row">
             <Col md={6}>
               <Nav className="mr-auto">
-              <Link to={"/findChannel"} className="link"><Nav.Link href="#link">Trouver un salon</Nav.Link></Link>
-                <Link to={"/newChannel"} className="link"><Nav.Link href="#link">Créer un salon</Nav.Link></Link>
+                <Link to={"/findChannel"} className="link"><Nav.Link href="#link" className="navLink">Rechercher un salon</Nav.Link></Link>
+                <Link to={"/newChannel"} className="link"><Nav.Link href="#link" className="navLink">Créer un salon</Nav.Link></Link>
               </Nav>
             </Col>
             <Col md={6}>
               <Nav className="justify-content-end">
-                <Link to={"/signIn"} className="link"><Nav.Link href="#link">Inscription</Nav.Link></Link>
-                <Link className="link" to={"/logIn"}><Nav.Link href="#link">Connexion</Nav.Link></Link>
-                <Link className="link" to={"/chat"}><Nav.Link href="#link">Chat</Nav.Link></Link>
-                <Link className="link" to={"/table"}><Nav.Link href="#link">USer List</Nav.Link></Link>
-                <Link className="link" to={"/profil"}><Nav.Link href="#link">Profil</Nav.Link></Link>
+                <Link to={"/signIn"} className="link"><Nav.Link href="#link" className="navLink">Inscription</Nav.Link></Link>
+                <Link className="link" to={"/logIn"}><Nav.Link href="#link" className="navLink">Connexion</Nav.Link></Link>
+                <Link className="link" to={"/chat"}><Nav.Link href="#link" className="navLink">Chat</Nav.Link></Link>
+                <Link className="link" to={"/table"}><Nav.Link href="#link" className="navLink">User List</Nav.Link></Link>
+                <Link className="link" to={"/profil"}><Nav.Link href="#link" className="navLink">Profil</Nav.Link></Link>
               </Nav>
             </Col>
           </Navbar.Collapse>
