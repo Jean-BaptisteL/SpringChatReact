@@ -37,7 +37,7 @@ function App() {
             <Col md={6}>
               <Nav className="justify-content-end">
                 <Link to={"/signIn"} className="link"><Nav.Link href="#link" className="navLink">Inscription</Nav.Link></Link>
-                <Link className="link" to={"/logIn"}><Nav.Link href="#link" className="navLink">Connexion</Nav.Link></Link>
+                <Nav.Link href="http://localhost:8080/home" className="navLink">Connexion</Nav.Link>
                 <Link className="link" to={"/chat"}><Nav.Link href="#link" className="navLink">Chat</Nav.Link></Link>
                 <Link className="link" to={"/table"}><Nav.Link href="#link" className="navLink">User List</Nav.Link></Link>
                 <Link className="link" to={"/profil"}><Nav.Link href="#link" className="navLink">Profil</Nav.Link></Link>
