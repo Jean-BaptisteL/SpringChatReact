@@ -34,3 +34,8 @@ h1{
 footer p{
     margin-bottom: 0;
 }
+
+#chatHeader{
+    background: linear-gradient(#45853d, #66c75a)!important;
+    color: #f0f1f2!important
+}

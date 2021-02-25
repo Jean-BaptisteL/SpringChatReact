@@ -54,7 +54,7 @@ export default function NewChannel() {
                             <Form.Control controlId="channelNbPlace" type="number" min={2} max={100} step={1}></Form.Control>
                         </Form.Group>
                         <Button variant="primary" type="submit" className="mt-4">
-                            S'inscrire
+                            Créer
                         </Button>
                     </Form>
                 </Col>

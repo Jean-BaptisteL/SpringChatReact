@@ -15,8 +15,8 @@ export default function Chat() {
         <>
             <Row className="m-0 d-flrx justify-content-around">
                 <Col md={7} sm={12}>
-                    <Card style={{ height: '600px' }} className="mb-4">
-                        <Card.Header className="text-center"><h2>Nom du salon</h2></Card.Header>
+                    <Card style={{ height: '600px' }} className="mb-4 shadow-lg">
+                        <Card.Header className="text-center" id="chatHeader"><h2>Nom du salon</h2></Card.Header>
                         <Card.Body className="overflow-auto">
                             {/* Message reçu */}
                             <div className="w-100">
